@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
+// }, false)
+
+var callback = function () {
   const nextBtn = document.querySelector('.js-nextBtn'),
     prevBtn = document.querySelector('.js-prevBtn'),
     slideList = document.querySelector('.js-slideList'),
@@ -53,4 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
   slider.addEventListener('mouseover', interval.kill)
   slider.addEventListener('mouseout', interval.start)
 // prevBtn.onclick = handle.prev
-}, false)
+}
+
+if (
+  document.readyState === 'complete' ||
+  (document.readyState !== 'loading' && !document.documentElement.doScroll)
+) {
+  callback()
+} else {
+  document.addEventListener('DOMContentLoaded', callback)
+}
