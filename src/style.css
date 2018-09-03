@@ -1,0 +1,68 @@
+.slider {
+  width: 100%;
+  height: 50vh;
+}
+
+.slider__container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+html,
+body,
+.slider__slides-list {
+  margin: 0;
+  padding: 0;
+}
+
+.slider__slide {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: scale(0.90) rotateX(90deg);
+}
+
+.active__slide {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1) rotateX(0deg)
+}
+
+.slider__slide:first-child{
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,252,214,1) 0%, rgba(255,102,102,0.44) 90% );
+}
+.slider__slide:nth-child(2){
+  background-image: linear-gradient( 107.6deg, rgba(251,70,70,0.73) 11.1%, rgba(198,14,244,0.76) 77.4% );
+}
+.slider__slide:nth-child(3){
+  background-image: radial-gradient( circle 758px at 17.2% 19.5%,  rgba(120,106,245,1) 4.3%, rgba(187,7,7,1) 78.8% );
+}
+.slider__slide:last-child{
+  background-image: radial-gradient( circle farthest-corner at 5.7% 14.9%,  rgba(239,229,171,1) 0%, rgba(127,199,178,1) 48.7% );
+}
+
+.slider__btns button {
+  position: absolute;
+  z-index: 2;
+  top: 48%;
+}
+
+.slider__btns button:first-child {
+  left: 0;
+}
+.slider__btns button:last-child {
+  right: 0;
+}
+
